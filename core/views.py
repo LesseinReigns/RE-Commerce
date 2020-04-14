@@ -265,14 +265,14 @@ class PaymentView(View):
                     # charge the customer because we cannot charge the token more than once
                     charge = stripe.Charge.create(
                         amount=amount,  # cents
-                        currency="usd",
+                        currency="ngn",
                         customer=userprofile.stripe_customer_id
                     )
                 else:
                     # charge once off on the token
                     charge = stripe.Charge.create(
                         amount=amount,  # cents
-                        currency="usd",
+                        currency="ngn",
                         source=token
                     )
 
